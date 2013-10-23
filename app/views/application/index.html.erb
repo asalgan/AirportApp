@@ -1,0 +1,19 @@
+<style type="text/css">
+
+
+</style>
+
+
+<% @codes.each do |codes| %>
+<% current_airport = Airport.new %>
+<% current_airport.code = "#{codes[:code]}" %>
+<h2><%= current_airport.code %></h2>
+<p> Temperature: <%= current_airport.temperature %></p>
+
+<% if current_airport.delay.to_i < 15 %>
+	<p>On time</p>
+<% else %>
+	<p>Delayed</p>
+<% end %>
+
+<% end %>
